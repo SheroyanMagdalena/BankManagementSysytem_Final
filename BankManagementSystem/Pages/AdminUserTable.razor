@@ -1,0 +1,40 @@
+﻿@using BankManagementSystem.Data
+@inject AppDbContext dbContext
+
+<h2>User Information</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Account ID</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Age</th>
+            <th>Date of Birth</th>
+            <th>Occupation</th>
+            <th>Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var account in allAccounts)
+        {
+            <tr>
+                <td>@account.AccountId</td>
+                <td>@account.Name</td>
+                <td>@account.Surname</td>
+                <td>@account.Age</td>
+                <td>@account.DateOfBirth.ToShortDateString()</td>
+                <td>@account.Occupation</td>
+                <td>@account.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<Account> allAccounts = new List<Account>();
+
+    protected override void OnInitialized()
+    {
+        allAccounts = dbContext.Accounts.ToList();
+    }
+}

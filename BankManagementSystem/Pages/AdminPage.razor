@@ -1,0 +1,42 @@
+﻿@page "/admin"
+@using BankManagementSystem.Data
+@inject AdminService adminService
+@using BankManagementSystem.Services
+
+<h1>Admin Page</h1>
+
+@if (!isAdminAuthenticated)
+{
+    <div>
+        <label for="adminPassword">Enter Admin Password:</label>
+        <input type="password" id="adminPassword" @bind="adminPassword" />
+        <button @onclick="AuthenticateAdmin">Submit</button>
+    </div>
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <p>@errorMessage</p>
+    }
+}
+else
+{
+    <AdminUserTable />
+}
+
+@code {
+    private string adminPassword;
+    private bool isAdminAuthenticated = false;
+    private string errorMessage;
+
+    private async Task AuthenticateAdmin()
+    {
+        var result = await adminService.AuthenticateAdmin(adminPassword);
+        if (result)
+        {
+            isAdminAuthenticated = true;
+        }
+        else
+        {
+            errorMessage = "Incorrect admin password.";
+        }
+    }
+}

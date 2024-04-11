@@ -1,0 +1,134 @@
+/* _content/BankManagementSystem/Shared/MainLayout.razor.rz.scp.css */
+.page[b-zzfuis3i9x] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-zzfuis3i9x] {
+    flex: 1;
+}
+
+.sidebar[b-zzfuis3i9x] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-zzfuis3i9x] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-zzfuis3i9x]  a, .top-row .btn-link[b-zzfuis3i9x] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-zzfuis3i9x] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-zzfuis3i9x] {
+        display: none;
+    }
+
+    .top-row.auth[b-zzfuis3i9x] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-zzfuis3i9x], .top-row .btn-link[b-zzfuis3i9x] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-zzfuis3i9x] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-zzfuis3i9x] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-zzfuis3i9x] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-zzfuis3i9x], article[b-zzfuis3i9x] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* _content/BankManagementSystem/Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-9heavdq97x] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-9heavdq97x] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-9heavdq97x] {
+    font-size: 1.1rem;
+}
+
+.oi[b-9heavdq97x] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-9heavdq97x] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-9heavdq97x] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-9heavdq97x] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-9heavdq97x]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-9heavdq97x]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-9heavdq97x]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-9heavdq97x] {
+        display: none;
+    }
+
+    .collapse[b-9heavdq97x] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
